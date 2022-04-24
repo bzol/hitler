@@ -13,8 +13,8 @@
       %fascist
   ==
 +$  vote
-  $?  %ja
-      %nein
+  $:  voter=@p
+      jn=?
   ==
 +$  vitals
   $?  %alive
@@ -28,24 +28,36 @@
   ==
 +$  president  
   $:  address=@p
-      policies=(list @p)
+      nominee=@p
+      policies=(list policy)
       veto=?
   ==
 +$  chancellor  
   $:  address=@p
-      policies=(list @p)
+      policies=(list policy)
       veto=?
   ==
 +$  policies  (list policy)
++$  votes  (list vote)
++$  executive-actions
+  $?
+      [%investigate]
+      [%elect]
+      [%peek]
+      [%execute]
+  ==
 
 +$  round-status  
-  $?  %election 
+  $?  %nomination
+      %election 
       %legislation 
       %execution
   ==
 +$  election-tracker  @ud
-+$  next-president   @p
+::  who is president according to normal turn flow
++$  turn-president   @p
 +$  last-president   @p
++$  special-president  @p
 +$  last-chancellor  @p
 +$  deck     policies
 +$  laws     policies
@@ -54,24 +66,24 @@
 +$  offices
   $:  =president
       =chancellor
-      votes=(list ?)
+      =votes
   ==
 
 +$  action
   $%  
       [%start addresses=(list @p)]
-      :: :: Election
-      [%nominate ?]
-      :: [%vote ?]
-      :: :: Legislation
-      :: [%discard]
-      :: [%enact]
-      :: [%veto]
-      :: :: Execution
-      :: [%investigate]
-      :: [%elect]
-      :: [%peek]
-      :: [%execute]
+      :: Election
+      [%nominate nominee=@p]
+      [%vote =vote]
+      :: Legislation
+      [%discard =policy]
+      [%enact =policy]
+      [%veto veto=?]
+      :: Execution
+      [%investigate player=@p]
+      [%election player=@p]
+      [%peek ?]
+      [%execute player=@p]
   ==
 
 :: +$  update
@@ -87,11 +99,3 @@
 
 
 
-:: +$  presidential-powers
-::   $:
-::       [%1 %investigate]
-::       [%2 %elect]
-::       [%3 %peek]
-::       [%4 %execute]
-::       [%5 %execute]
-::   ==
