@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { expandComponent, getProps } from '../utils';
 
-const Create = (props) => {
-	const { sDashboards } = props;
+const TestComponent = (props) => {
+	// const api1 = getProps('api1-0.0.1', props);
+	// const api2 = getProps('api2-0.0.1', props);
+	console.log(props.api1);
 	return (
 		<View 
 			style={styles.container}
 		>
-			<Text>Create</Text>
+			<Text>{props.api1}</Text>
 		</View>
 	);
 };
@@ -23,4 +26,9 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
-export default Create;
+export default expandComponent(
+	[
+		'api1-0.0.1',
+		'api2-0.0.1',
+	],
+	TestComponent({api1:'13'}));
