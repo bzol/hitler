@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import TestComponent from './tapestry/components/TestComponent';
-import {} from './tapestry/declare';
+import TestComponent from './cosmos/components/TestComponent';
+import {} from './cosmos/declare';
 
 export default function App() {
 		return (

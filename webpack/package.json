@@ -1,0 +1,26 @@
+{
+	"name": "hitler",
+	"version": "1.0.0",
+	"description": "",
+	"private": true,
+	"scripts": {
+		"start": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"devDependencies": {
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.2"
+	},
+	"dependencies": {
+		"@vitejs/plugin-react": "^4.0.1",
+		"react": "^18.2.0",
+		"react-native": "^0.72.1",
+		"react-native-web": "^0.19.6",
+		"vite": "^4.3.9"
+	}
+}
