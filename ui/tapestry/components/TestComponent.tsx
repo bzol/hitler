@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
-export default expandComponent(
-	[
-		'api1-0.0.1',
-		'api2-0.0.1',
-	],
-	TestComponent({api1:'13'}));
+
+export default {
+	id: "TestComponent",
+	apis: [{ desk: "diemnsion", id: "dimension-0.0.1" }],
+	component: TestComponent,
+};

@@ -1,9 +1,10 @@
 import TestComponent from "./components/TestComponent";
-import dashboard from "./apis/dashboard";
+import dimension from "./apis/dimension";
 
 window.___hitler = {
-	apis: [dashboard],
+	id: 'hitler',
+	apis: [dimension],
 	components: [TestComponent],
 };
 
-
+var testHitler = 'hello there!!!!!!!!!!!!!!!';

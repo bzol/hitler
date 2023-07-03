@@ -1,14 +1,10 @@
 import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { expandComponent, getProps } from './utils';
+import { expandComponent, getProps } from "./utils";
 
 const TestComponent = (props) => {
-	// const api1 = getProps('api1-0.0.1', props);
-	// const api2 = getProps('api2-0.0.1', props);
-	// console.log(api1);
+	console.log(props);
 	return (
-		<View 
-			style={styles.container}
-		>
+		<View style={styles.container}>
 			<Text>TestComponent</Text>
 		</View>
 	);
@@ -26,9 +22,8 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
-export default expandComponent(
-	[
-		'api1-0.0.1',
-		'api2-0.0.1',
-	],
-	TestComponent);
+export default {
+	id: "TestComponent",
+	apis: [{ desk: "dimension", id: "dimension-0.0.1" }],
+	component: TestComponent,
+};
