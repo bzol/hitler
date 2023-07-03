@@ -1,11 +1,9 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import TestComponent from './cosmos/components/TestComponent';
-import {} from './cosmos/declare';
 
 export default function App() {
 		return (
 			<View style={styles.container}>
-				<TestComponent.component/>
+				<Text> Hello </Text>
 			</View>
 		);
 }
