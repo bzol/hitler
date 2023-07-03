@@ -1,5 +1,0 @@
-- use `npm start` to develop the components with mock data
-- run `npm run build` to get the bundled components and api description
-- copy the `./dist/cosmos.js` file to the base folder of your bundled frontend
-- docket/upload that folder as usual
-- congratulations, your desk is compatible with Cosmos!
